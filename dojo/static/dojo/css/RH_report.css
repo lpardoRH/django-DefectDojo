@@ -1,0 +1,191 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+
+body {
+    margin: 20px 0px;
+}
+
+a {
+    outline-color: transparent;
+    text-decoration: none;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-break: keep-all
+}
+
+h3 {
+    font-weight: bolder;
+    padding: 40px 0px 20px;
+}
+
+
+h4 {
+    display: none;
+}
+
+h6 {
+    font-weight: bold;
+    color: #999;
+}
+div.panel h5:nth-child(1) {
+    font-weight: bolder;
+    color: #555;
+    padding-top: 20px;
+}
+
+.panel-heading h5 {
+    border-top: #ccc 1px dotted;
+}
+
+
+#table_of_contents,
+#executive,
+#findings {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+.container {
+    background-image: url("../img/RH_report/RH-logo.png");
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-position-x: right;
+    padding-top: 20px;
+}
+
+.panel {
+    margin-top: 40px;
+}
+
+.panel:nth-of-type(1) {
+    margin-top: 0px;
+}
+
+.severity {
+    padding: 4px 8px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 100%;
+    color: #444;
+}
+
+#contents div:first-child {
+    padding-bottom: 20px;
+}
+
+.severity-Info {
+    background-color: #a4c2f4 !important;
+}
+
+.severity-Low {
+    background-color: #cccccc !important;
+}
+
+.severity-Medium {
+    background-color: #ffd966 !important;
+}
+
+.severity-High {
+    background-color: #ff9900 !important;
+}
+
+.severity-Critical {
+    background-color: #ff0000 !important;
+}
+
+div:has(h3#product) {
+    margin: 20px auto 40px;
+}
+
+#product {
+    font-size: 60px;
+    color: #e00;
+}
+
+#product+p {
+    page-break-after: always;
+}
+
+div#toc>ul:nth-last-child(-n + 1) br {
+    display: none;
+}
+
+
+div#toc>ul:nth-last-child(-n + 1) li a span {
+    font-size: 70%;
+}
+
+.finding-title sup,
+#toc sup {
+    line-height: 100%;
+    top: 0;
+    vertical-align: unset;
+    font-size: small;
+    padding-right: 20px;
+    border-radius: 30px;
+    background-color: #eee;
+    padding: 3px 10px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Remove finding_age graphic */
+div.col-md-6:has(div#finding_age) {
+    display: none;
+}
+
+div.pretty-graphs,
+.panel,
+.panel-body {
+    page-break-inside: avoid;
+}
+
+.graph {
+    height: 250px;
+    width: 418px;
+}
+
+.graph-2x {
+    height: 250px;
+    width: 898px;
+}
+
+.flot-base {
+    filter: invert(50%) sepia(5%) saturate(103%) hue-rotate(157deg) brightness(150%) contrast(124%)
+}
+
+div.col-md-6:has(div#open_findings),
+div#open_findings {
+    position: relative;
+    width: 100%;
+}
+
+/* Print styles */
+@page {
+    size: auto;
+    margin: 20mm 25mm;
+    width: 100%;
+}
+
+@media print {
+
+    .container {
+        padding-left: unset !important;
+        padding-right: unset !important;
+        max-width: unset !important;
+    }
+
+    body:before {
+        content: url("../img/RH_report/RH-logo.png");
+        display: block;
+        float: right;
+    }
+}
+
+/* end print styles */
